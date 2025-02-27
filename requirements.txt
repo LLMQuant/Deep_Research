@@ -1,0 +1,5 @@
+reportlab>=4.0.0
+markdown>=3.4.0
+jieba>=0.42.1
+beautifulsoup4>=4.13.0
+pillow>=9.0.0 

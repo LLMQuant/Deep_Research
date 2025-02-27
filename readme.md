@@ -15,7 +15,7 @@ A professional tool for generating bilingual (Chinese and English) financial rep
 
 ## Screenshots
 
-![Sample Report](output/LLMQuant_Report.pdf)
+![Sample Report Cover](screenshots/report_cover.png)
 
 ## Requirements
 

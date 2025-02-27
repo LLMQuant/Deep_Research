@@ -20,15 +20,26 @@ source llmquant_env/bin/activate
 echo "Checking and installing required packages..."
 pip install -r requirements.txt
 
+# Set default font path to the project font
+DEFAULT_FONT_PATH="$(pwd)/font/STKaiti.ttf"
+
 # Get font path from command line argument
 FONT_PATH=""
 if [ "$1" != "" ]; then
     FONT_PATH="$1"
     if [ ! -f "$FONT_PATH" ]; then
         echo "Warning: Font file not found at $FONT_PATH. Will use default font."
-        FONT_PATH=""
+        FONT_PATH="$DEFAULT_FONT_PATH"
     else
         echo "Using custom font: $FONT_PATH"
+    fi
+else
+    # Use the default font if no argument is provided
+    if [ -f "$DEFAULT_FONT_PATH" ]; then
+        FONT_PATH="$DEFAULT_FONT_PATH"
+        echo "Using default font: $FONT_PATH"
+    else
+        echo "Warning: Default font not found at $DEFAULT_FONT_PATH. Will use system font."
     fi
 fi
 
@@ -40,7 +51,7 @@ else
     python generate_report_simple.py
 fi
 
-echo "Done! Check LLMQuant_Report.pdf for the generated report."
+echo "Done! Check output/LLMQuant_Report.pdf for the generated report."
 
 # Deactivate virtual environment
 deactivate 

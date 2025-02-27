@@ -68,7 +68,7 @@ source llmquant_env/bin/activate  # On Windows: llmquant_env\Scripts\activate
 python generate_report_simple.py
 ```
 
-4. The generated PDF will be saved as `LLMQuant_Report.pdf` in the same directory
+4. The generated PDF will be saved as `LLMQuant_Report.pdf` in the `output` directory
 
 ### Using a Custom Font
 
@@ -95,9 +95,10 @@ You can customize the report by:
 
 ## Font Requirements
 
-The application uses "Huawen Kaiti" (华文楷体) font by default. On macOS, it falls back to "STHeiti Light.ttc" if the Huawen Kaiti font is not available.
+The application uses the "STKaiti" font included in the project's `font` directory by default. If this font is not available, it falls back to "STHeiti Light.ttc" on macOS.
 
 For Chinese text, it's recommended to use a font that supports Chinese characters, such as:
+- STKaiti (楷体)
 - Huawen Kaiti (华文楷体)
 - SimSun (宋体)
 - SimHei (黑体)

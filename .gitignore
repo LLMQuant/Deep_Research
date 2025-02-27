@@ -27,8 +27,8 @@ Thumbs.db
 *.swp
 *.swo
 
-# Generated PDF files
-*.pdf
+# # Generated PDF files
+# *.pdf
 
 # Jupyter Notebook
 .ipynb_checkpoints 

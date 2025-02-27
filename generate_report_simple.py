@@ -25,7 +25,8 @@ from PIL import Image as PILImage
 from reportlab.platypus.tableofcontents import TableOfContents
 
 # Default font paths
-DEFAULT_FONT_PATH = "/System/Library/Fonts/STHeiti Light.ttc"  # Default fallback font
+PROJECT_FONT_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "font", "STKaiti.ttf")
+DEFAULT_FONT_PATH = PROJECT_FONT_PATH if os.path.exists(PROJECT_FONT_PATH) else "/System/Library/Fonts/STHeiti Light.ttc"
 FONT_NAME = "HuawenKaiti"  # The name we'll use to refer to the font in the document
 
 def register_font(font_path=None):
@@ -721,7 +722,7 @@ def generate_pdf(input_md_path, output_pdf_path, font_path=None):
 
 if __name__ == "__main__":
     input_md_path = "/Users/haoxue/LLMQuant_report/input.md"
-    output_pdf_path = "/Users/haoxue/LLMQuant_report/LLMQuant_Report.pdf"
+    output_pdf_path = "/Users/haoxue/LLMQuant_report/output/LLMQuant_Report.pdf"
     
     # Check if a custom font path is provided as a command-line argument
     font_path = None
@@ -730,5 +731,8 @@ if __name__ == "__main__":
         if not os.path.exists(font_path):
             print(f"Warning: Font file not found at {font_path}. Will use default font.")
             font_path = None
+    
+    # Ensure output directory exists
+    os.makedirs(os.path.dirname(output_pdf_path), exist_ok=True)
     
     generate_pdf(input_md_path, output_pdf_path, font_path) 

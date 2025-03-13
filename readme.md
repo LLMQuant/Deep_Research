@@ -15,7 +15,8 @@ A professional tool for generating bilingual (Chinese and English) financial rep
 
 ## Screenshots
 
-![Sample Report Cover](screenshots/report_cover.png)
+<img width="694" alt="image" src="https://github.com/user-attachments/assets/ef447a59-b7e4-41fc-9d9a-6b496b5aaef8" />
+
 
 ## Requirements
 
